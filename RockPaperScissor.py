@@ -62,7 +62,7 @@ while con:
     if x == "y":
         con = True
     else:
-        print("Bye!")
+        print("Bye Bye Bye!")
         con = False
 
 
