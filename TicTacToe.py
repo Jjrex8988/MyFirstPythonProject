@@ -1,3 +1,6 @@
+from art import logo
+print(logo)
+
 from abc import ABCMeta, abstractmethod
 import random
 
