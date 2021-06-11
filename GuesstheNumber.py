@@ -20,7 +20,6 @@ def set_difficulty():
 
 
 def check_answer(guess, num, turn):
-
     if guess > num:
         print("Too high.")
         return turn - 1
@@ -37,7 +36,7 @@ def game():
     print("I'm thinking a number between 1 and 100")
 
     num = randint(1, 100)
-    print(f"Pssst, the correct answer is {num}") ## You might need to opt out
+    print(f"Pssst, the correct answer is {num}")  ## You might need to opt out
 
     turn = set_difficulty()
     guess = 0
@@ -45,11 +44,19 @@ def game():
         print(f"You have {turn} attempts remaining to guess the number.")
 
         guess = int(input("Make a guess: "))
+        if guess not in range(1, 101):
+            wrong_guess = True
+            while wrong_guess:
+                print("Please guess a number within 100")
+                guess = int(input("Make a guess: "))
+                if guess in range(1, 101):
+                    wrong_guess = False
         turn = check_answer(guess, num, turn)
         if turn == 0:
             print("You've run out of guesses, you lose.")
             return
         elif guess != num:
             print("Guess again")
+
 
 game()
