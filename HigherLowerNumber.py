@@ -12,7 +12,6 @@ def format_data(account):
 
 
 def checking_answer(guess, a_followers, b_followers):
-
     if a_followers > b_followers:
         return guess == "a"
     else:
@@ -24,12 +23,10 @@ score = 0
 game_should_continue = True
 account_b = random.choice(data)
 
-
 while game_should_continue:
 
     account_a = account_b
     account_b = random.choice(data)
-
 
     while account_a == account_b:
         account_b = random.choice(data)
@@ -63,7 +60,6 @@ while game_should_continue:
         # else:
         #     account_a = random.choice(data)
 
-
         print(f"You're right! Current score: {score}")
 
     elif not is_correct:
@@ -73,9 +69,7 @@ while game_should_continue:
         # else:
         #     account_b = random.choice(data)
 
-
         print(f"Sorry, that's wrong. Final score: {score}")
-
 
         ask = input("Do you want to play again? 'y' or 'n': ").lower()
         while ask not in ['y', 'n']:
@@ -91,7 +85,3 @@ while game_should_continue:
         elif ask == 'n':
             game_should_continue = False
             print(f"Final score: {score}")
-
-
-
-
